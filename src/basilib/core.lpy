@@ -1,0 +1,20 @@
+(ns basilib.core
+  (:require [basilisp.string :as str])
+  (:import datetime))
+
+(defn hello []
+  :hi)
+
+#_(hello)
+
+(defn time-now []
+  (-> (datetime.datetime/now)
+      (.strftime "%Y-%m-%d %H:%M:%S")))
+
+#_(time-now)
+
+(defn warn [warning]
+  (str \[ (time-now) "] Warning: "(str/upper-case warning) "!"))
+
+#_(warn "fun ahead")
+
